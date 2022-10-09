@@ -7,30 +7,30 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h3> Add Contact </h3>
+                    <h3> Edit Contact </h3>
                     <a href="{{ url('contacts') }}" class="btn btn-sm- btn-danger">Back</a>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('store-contact') }}" method="POST">
+                    <form action="{{ url('update-contact/'.$key) }}" method="POST">
                     @csrf
                     <div class="form-group m-3">
                         <label>First Name</label>
-                        <input type="text" class="form-control" name="first_name">
+                        <input type="text" class="form-control" name="first_name" value="{{ $editData['first_name']}}">
                     </div>
                     <div class="form-group m-3">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" name="last_name">
+                        <input type="text" class="form-control" name="last_name" value="{{ $editData['last_name'] }}">
                     </div>
                     <div class="form-group m-3">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control" name="email" value="{{ $editData['email'] }}">
                     </div>
                     <div class="form-group m-3">
                         <label>Password </label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password" value="{{ $editData['password'] }}">
                     </div>
                     <div class="form-group m-3">
-                        <button type="submit" class="btn btn-primary"> Submit </button>
+                        <button type="submit" class="btn btn-primary"> Update </button>
                     </div>
                     </form>
                 </div>
